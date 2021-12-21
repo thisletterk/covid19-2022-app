@@ -1,0 +1,43 @@
+<%- include('partials/header'); %>
+
+  <h1> <%= dayOfTheWeek %> </h1>
+  <body class="text-center">
+
+
+<div class="container_home">
+  <main class="form-signin">
+    <form action="/" method="post" autocomplete="off">
+      <img class="mb-4" src="images/logo.png" alt="" width="120" height="120">
+      <h1 class="h3 mb-3 fw-normal">Covid19 Realtime Data Search</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control top" id="floatingInput" name="country_" placeholder="Please enter country name" required autofocus>
+        <label for="floatingInput">Please Enter Country</label>
+      </div>
+      <div class="data">
+
+
+
+<%  homeContent.forEach((item) => { %>
+<p>  Country: <%=  item.cCountry %> <p>
+  <p>  Code: <%=  item.cCode %> <p>
+    <p>  Confirmed: <%=  item.cConfirmed %> <p>
+      <p>  Recovered: <%=  item.cRecovered %> <p>
+        <p>  Deaths: <%=  item.cDeath %> <p>
+          <p>  Critical: <%=  item.cCritical %> <p>
+            <p>  Update: <%=  item.cUpdate %> <p>
+<%  }); %>
+
+
+
+      </div>
+
+
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Search</button>
+
+    </form>
+  </main>
+</div>
+
+<%- include('partials/footer'); %>
